@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+/* 서브 메뉴 */
+#admin_subMenu
+{
+	float: left;
+	width: 15%;
+	min-width: 150px;
+	padding: 10px;
+}
+
+#admin_subMenu ul li
+{
+	margin: 10px;
+	list-style: disc;
+	font-weight: bold;
+}
+
+#admin_subMenu ul li a
+{
+	color: black;
+	text-decoration: none;
+}
+
+#admin_subMenu ul li a:hover
+{
+	border-bottom: 1px solid #000;
+}
+
+/* 본문 */
+article
+{
+	margin: 20px 0px;
+	float: right;
+	width: 80%;
+}
+
+/* 버튼 우측으로 */
+.box_btn
+{
+	float: right;
+}
+
+/* 버튼 */
+.btn
+{
+	height: 30px;
+	background-color: white;
+	color: black;
+	border: none;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 10px 5px;
+	border-bottom: 2px solid #000;
+}
+
+.btn:hover
+{
+	color: blue;
+}
+
+/* table 내부 기능 버튼 */
+.btn_table
+{
+	height: 30px;
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	margin: 5px;
+	padding: 0 10px;
+}
+
+.btn_table:hover
+{
+	background-color: #E6E6E6;
+}
+
+/* 리스트형 table */
+.table_list
+{
+	width: 100%;
+	margin: 40px 0;
+	border-collapse: collapse;
+	border-top: 1px solid black;
+}
+
+.table_list tr
+{
+	border-bottom: 1px solid #DCDCDC;
+	height: 40px;
+}
+
+.table_list th
+{
+	padding: 10px 0;
+}
+
+.table_list td
+{
+	 text-align: center;
+	 padding: 5px 0;
+}
+
+.table_list a:hover
+{
+	text-decoration: underline;
+}
+
+/* */
+.table_form
+{
+	width: 100%;
+	margin: 20px 0;
+}
+
+.table_form th
+{
+	background: #E6E6E6;
+	padding: 5px 0;
+}
+
+.table_form td
+{
+	height: 30px;
+	border: 1px solid gray;
+}
+
+.table_form td input
+{
+	height: 100%;
+	border: none;
+	padding: 0 10px; 
+}
+
+
+.table_form td input[type="text"]
+{
+	width: calc(100% - 20px);
+	display: inline-block;
+}
+
+.table_form td input[type="text"].input_text
+{
+	width: 80%;
+}
+
+.table_form td input[type="file"]
+{
+	margin: 5px 0 0 0;
+    vertical-align: middle;
+}
+
+.table_form td textarea
+{
+	width: calc(100% - 30px);
+	border: none;
+	padding: 5px 10px;
+}
+
