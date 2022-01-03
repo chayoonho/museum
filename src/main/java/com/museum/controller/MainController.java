@@ -14,5 +14,40 @@ public class MainController {
 		mav.setViewName("index");
 		return mav;
 	}
+	
+	@RequestMapping("architecturalOverview")
+	public String architecturalOverview() {
+		return "intro/architecturalOverview";
+	}
+	
+	@RequestMapping("bus")
+	public String bus() {
+		return "intro/bus";
+	}
 
+	@RequestMapping("car")
+	public String car() {
+		return "intro/car";
+	}
+	
+	@RequestMapping("greeting")
+	public String greeting() {
+		return "intro/greeting";
+	}
+	
+	@RequestMapping("parking")
+	public String parking() {
+		return "intro/parking";
+	}
+	
+	@RequestMapping("subway")
+	public String subway() {
+		return "intro/subway";
+	}
+	
+	@RequestMapping("tourGuidance")
+	public String tourGuidance() {
+		return "intro/tourGuidance";
+	}
+	
 }
