@@ -9,5 +9,5 @@ import com.museum.service.MemberService;
 public class MemberController {
 
 	@Autowired
-	MemberService ms;
+	MemberService memberSvc;
 }

@@ -9,5 +9,5 @@ import com.museum.dao.INoticeDao;
 public class NoticeService {
 	
 	@Autowired
-	INoticeDao ndao;
+	INoticeDao noticeDao;
 }

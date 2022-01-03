@@ -9,5 +9,5 @@ import com.museum.dao.IMemberDao;
 public class MemberService {
 
 	@Autowired
-	IMemberDao mdao;
+	IMemberDao memberDao;
 }

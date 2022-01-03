@@ -9,5 +9,5 @@ import com.museum.service.ReplyTicketService;
 public class ReplyTicketController {
 	
 	@Autowired
-	ReplyTicketService rs;
+	ReplyTicketService rtSvc;
 }

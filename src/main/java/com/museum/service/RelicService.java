@@ -9,5 +9,5 @@ import com.museum.dao.IRelicDao;
 public class RelicService {
 
 	@Autowired
-	IRelicDao rdao;
+	IRelicDao relicDao;
 }

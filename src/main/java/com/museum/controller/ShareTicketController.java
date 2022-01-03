@@ -9,5 +9,5 @@ import com.museum.service.ShareTicketService;
 public class ShareTicketController {
 	
 	@Autowired
-	ShareTicketService ss;
+	ShareTicketService shSvc;
 }

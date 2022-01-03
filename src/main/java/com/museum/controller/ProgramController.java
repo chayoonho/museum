@@ -9,5 +9,5 @@ import com.museum.service.ProgramService;
 public class ProgramController {
 	
 	@Autowired
-	ProgramService ps;
+	ProgramService programSvc;
 }

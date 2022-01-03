@@ -9,5 +9,5 @@ import com.museum.dao.IProgramDao;
 public class ProgramService {
 	
 	@Autowired
-	IProgramDao pdao;
+	IProgramDao programDao;
 }

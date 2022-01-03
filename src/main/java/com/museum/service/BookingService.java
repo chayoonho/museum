@@ -9,5 +9,5 @@ import com.museum.dao.IBookingDao;
 public class BookingService {
 	
 	@Autowired
-	IBookingDao bdao;
+	IBookingDao bookingDao;
 }

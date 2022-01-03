@@ -1,12 +1,25 @@
 package com.museum.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.museum.service.ExhibitionService;
+import com.museum.service.NoticeService;
+import com.museum.service.ProgramService;
+
 @Controller
 public class MainController {
 	
+	@Autowired
+	ProgramService programSvc;
+	
+	@Autowired
+	ExhibitionService exhbnSvc;
+	
+	@Autowired
+	NoticeService noticeSvc;
 	
 	@RequestMapping("/")
 	public ModelAndView index() {

@@ -9,5 +9,5 @@ import com.museum.service.NoticeService;
 public class NoticeController {
 	
 	@Autowired
-	NoticeService ns;
+	NoticeService noticeSvc;
 }

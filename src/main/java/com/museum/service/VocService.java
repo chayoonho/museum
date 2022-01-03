@@ -9,6 +9,6 @@ import com.museum.dao.IVocDao;
 public class VocService {
 	
 	@Autowired
-	IVocDao vdao;
+	IVocDao vocDao;
 
 }

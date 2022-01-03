@@ -8,10 +8,8 @@ import com.museum.service.ExhibitionService;
 
 @Controller
 public class ExhibitionController {
-
-	@Autowired
-	ExhibitionService es;
 	
-
+	@Autowired
+	ExhibitionService exhbSvc;
 
 }

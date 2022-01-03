@@ -3,12 +3,12 @@ package com.museum.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.museum.dao.IReplyTicketDao;
+import com.museum.dao.IInterestDao;
 
 @Service
-public class ReplyTicketService {
-
-	@Autowired
-	IReplyTicketDao rtDao;
+public class InterestService {
 	
+	@Autowired
+	IInterestDao interestDao;
+
 }
