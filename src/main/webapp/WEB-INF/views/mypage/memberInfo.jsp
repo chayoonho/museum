@@ -7,7 +7,7 @@
 <article>
 	<br>
 	<h2>회원 정보</h2>
-	<form method="post" action="museum.do" name="mypageFrm">
+	<form method="post" action="mypageInfo" name="mypageFrm">
 		<table class="table_view">
 			<tr>
 				<th>성명</th>
@@ -28,8 +28,8 @@
 		</table>
 		
 		<div class="btn_box">
-			<input type="button" class="btn" value="회원정보 수정" class="cancel" onclick="location.href='museum.do?command=memberEditForm'">
-			<input type="button" class="btn" value="회원탈퇴" class="cancle" onclick="location.href='museum.do?command=memberDeleteForm'">
+			<input type="button" class="btn" value="회원정보 수정" class="cancel" onclick="location.href='memberEditForm'">
+			<input type="button" class="btn" value="회원탈퇴" class="cancle" onclick="location.href='memberDeleteForm'">
 		</div>
 		<div class="clear"></div>
 	</form>

@@ -3,7 +3,6 @@
 
 <article>
 	<form method="post" name="signupForm" >
-		<input type="hidden" name="command"  value="signup">
 		<h2>회원 정보 상세 입력 ( * 는 필수 입력사항입니다.)</h2>
 		<hr>
 		<br>
@@ -21,7 +20,7 @@
 		<div class="clear"></div>
 		<div id="buttons">
 		    <input type="button" value="회원가입" class="btn" onclick="go_save_signup()"> 
-		    <input type="reset" value="취소" class="btn" onclick="location.href='museum.do?command=main'">
+		    <input type="reset" value="취소" class="btn" onclick="location.href='/'">
 		</div>
 	</form>
 </article>

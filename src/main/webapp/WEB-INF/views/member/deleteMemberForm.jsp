@@ -6,8 +6,8 @@
 
 <article>
 	<h2>회원 탈퇴</h2>
-	<form method="post" name="signupForm">
-	<input type="hidden" name="command" value="memberDelete" />
+	<form method="post" name="signupForm" action="memberDeleteForm">
+
 	<fieldset>
 		<legend><h2>정말 회원 탈퇴를 진행하시겠습니까?</h2></legend>
 			회원 탈퇴시 게시글 수정이 불가합니다<br>

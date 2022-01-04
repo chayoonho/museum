@@ -7,7 +7,6 @@
 <article>
 	<h2>회원 정보 수정</h2>
 	<form method="post" name="signupForm">
-	<input type="hidden" name="command" value="memberEdit" />
 	<input type="hidden" name="admin_yn" value="${member.admin_yn}">
 	<table class="table_form">
 		<tr>
@@ -39,7 +38,7 @@
 	    <div class="clear"></div>
 		<div id="buttons">
 			<input type="submit" value="수정" class="btn" onclick="go_update_member();"> 
-			<input type="reset" value="취소" class="btn" onClick="location.href='museum.do?command=myPageForm&id=${MemberDto.id}'">
+			<input type="reset" value="취소" class="btn" onClick="location.href='myPageForm?id=${MemberDto.id}'">
 		</div>
 	
 	</form>
