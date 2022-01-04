@@ -16,10 +16,10 @@
 				<td>조회수&nbsp;&nbsp;&nbsp;${noticeDto.readcount}</td>
 			</tr>
 			<tr>
-				<td colspan="3"><label>${noticeDto.content}</label></td>
+				<td colspan="3"><label><pre>${noticeDto.content}</pre></label></td>
 			</tr>
 		</table>
-		<input type="button" value="목록으로" class="btn" onClick="location.href ='museum.do?command=noticeList'"> 
+		<input type="button" value="목록으로" class="btn" onClick="location.href='noticeList'"> 
 	</form>
 </article>
 

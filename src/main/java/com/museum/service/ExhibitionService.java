@@ -9,5 +9,9 @@ import com.museum.dao.IExhibitionDao;
 public class ExhibitionService {
 	
 	@Autowired
-	IExhibitionDao edao;
+	IExhibitionDao exhbnDao;
+
+	public String getExhibition() {
+		return exhbnDao.getExhibition();
+	}
 }

@@ -11,5 +11,15 @@
 		) WHERE rn &gt;= #{param1.startNum} 
 		) WHERE rn &lt;= #{param1.endNum} 
 	</select>
+	
+	<select id="getNotice" resultType="com.museum.dto.NoticeDto">
+		SELECT * FROM notice WHERE num=#{param1}
+	</select>
+	
+	<update id="plusReadCount">
+		UPDATE notice SET readcount = readcount + 1 WHERE num=#{param1}
+	</update>
+	
+
 
 </mapper>

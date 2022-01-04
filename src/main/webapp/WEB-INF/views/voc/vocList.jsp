@@ -4,7 +4,7 @@
 <article>
 	<h2 class="subTitle">고객의 소리</h2>
 	<div class="box_btn">
-		<input type="button" value="글쓰기" class="btn" onclick="location.href='museum.do?command=vocWriteForm'">
+		<input type="button" value="글쓰기" class="btn" onclick="vocWriteForm'">
 	</div>
 	<form name="frm" method="post">
 		<table class="table_list">
@@ -18,7 +18,7 @@
 					<tr>
 						<td>${VocDto.num}</td>
 						<td style="text-align: left;">
-							<a href="museum.do?command=vocDetail&num=${VocDto.num}">${VocDto.title}</a>
+							<a href="vocDetail?num=${VocDto.num}">${VocDto.title}</a>
 						</td>
 						<td style="text-align: left;">${VocDto.content}</td>
 						<td><fmt:formatDate value="${VocDto.writedate}" type="date" /></td>
@@ -35,13 +35,13 @@
 	</form>
 	
 	<!--페이징-->
-	<jsp:include page="/paging/paging.jsp">
+	<jsp:include page="../include/paging/paging.jsp">
 		<jsp:param name="page" value="${paging.page}" />
 		<jsp:param name="beginPage" value="${paging.beginPage}" />
 		<jsp:param name="endPage" value="${paging.endPage}" />
 		<jsp:param name="prev" value="${paging.prev}" />
 		<jsp:param name="next" value="${paging.next}" />
-		<jsp:param name="command" value="museum.do?command=vocList" />
+		<jsp:param name="command" value="vocList" />
 	</jsp:include>
 	
 </article>

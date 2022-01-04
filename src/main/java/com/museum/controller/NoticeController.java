@@ -1,13 +1,18 @@
 package com.museum.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ezen.spg16.dto.BoardVO;
+import com.ezen.spg16.dto.ReplyVO;
 import com.museum.dto.Paging;
 import com.museum.service.NoticeService;
 import com.museum.service.ProgramService;
@@ -16,10 +21,10 @@ import com.museum.service.ProgramService;
 public class NoticeController {
 
 	@Autowired
-	NoticeService ns;
-	
+	NoticeService noticeSvc;
+
 	@Autowired
-	ProgramService ps;
+	ProgramService programSvc;
 
 	@RequestMapping("noticeList")
 	public ModelAndView noticeList(HttpServletRequest request) {
@@ -57,16 +62,39 @@ public class NoticeController {
 		paging.setPage(page);
 		paging.setDisplayRow(10);
 
-		int count = ps.getAllCount("notice", "title", key);
+		int count = programSvc.getAllCount("notice", "title", key);
 		paging.setTotalCount(count);
 		paging.paging();
 
-		mav.addObject("noticeList", ns.listNotice(paging, key));
+		mav.addObject("noticeList", noticeSvc.listNotice(paging, key));
 		mav.addObject("paging", paging);
 		mav.addObject("key", key);
 		mav.setViewName("notice/noticeList");
 
 		return mav;
 
+	}
+
+	@RequestMapping("noticeDetail")
+	public ModelAndView programDetail(@RequestParam("num") int num) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("noticeDto", noticeSvc.getNotice(num));
+		mav.setViewName("notice/noticeDetail");
+
+		return mav;
+	}
+	
+	@RequestMapping("programDetailWithoutCount")
+	public ModelAndView boardViewNextUpdate(@RequestParam("num") int num, HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("program", programSvc.getProgram(num));
+		mav.setViewName("program/programDetail");
+		return mav;
+	}
+	
+	@RequestMapping("noticeWriteForm")
+	public String noticeWriteForm() {
+		return "admin/noticeWrite";
 	}
 }

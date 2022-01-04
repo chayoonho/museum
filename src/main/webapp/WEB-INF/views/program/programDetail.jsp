@@ -8,7 +8,7 @@
 	<form name="frm">
 		<div class="content_detail">
 			<div class="content_img">
-				<img src="/img/${programDto.img}"  style="width: 90%;" onerror="this.src='/img/img_noImage.jpg'">
+				<img src="img/${programDto.img}"  style="width: 90%;" onerror="this.src='/img/img_noImage.jpg'">
 			</div>
 			<hr style="border: 1px solid black;">
 			<div class="content_view">
@@ -22,7 +22,7 @@
 						</li>
 						<li>
 							<strong>주제/내용</strong>
-							<p>${programDto.content}</p>
+							<p><pre>${programDto.content}</pre></p>
 						</li>
 						<li>
 							<strong>기간</strong>

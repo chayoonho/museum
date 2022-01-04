@@ -9,5 +9,5 @@ import com.museum.dao.IShareTicketDao;
 public class ShareTicketService {
 
 	@Autowired
-	IShareTicketDao sdao;
+	IShareTicketDao stDao;
 }

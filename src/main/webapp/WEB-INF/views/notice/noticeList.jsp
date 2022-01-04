@@ -1,9 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
+<script src="/script/notice.js"></script>
 
 <article>
 	<h2 class="subTitle">공지사항</h2>
+	
+	
+	
+			
 	<form name="frm" method="post">
+	
+		<!-- 검색 -->
+		<div class="search-container">
+			<input type="text" placeholder="제목" name="key" value="${key}" class="input_search">
+			<input type="image" src="img/icons8-search-30.png" class="img_search" onclick="search_notice()">
+		</div>
+		
 		<table class="table_list">
 			<thead>
 				<tr>
@@ -27,6 +39,7 @@
 			</tbody>
 		</table>
 	</form>
+	
 	<!--페이징-->
 	<jsp:include page="../include/paging/paging.jsp">
 		<jsp:param name="page" value="${paging.page}" />
@@ -34,7 +47,7 @@
 		<jsp:param name="endPage" value="${paging.endPage}" />
 		<jsp:param name="prev" value="${paging.prev}" />
 		<jsp:param name="next" value="${paging.next}" />
-		<jsp:param name="command" value="programList" />
+		<jsp:param name="command" value="noticeList" />
 	</jsp:include>
 </article>
 

@@ -19,5 +19,5 @@
 	<select id="getAllCount" resultType="_int">
 		SELECT count(*) FROM ${param1} WHERE ${param2} like '%'||#{param3}||'%'
 	</select>
-	
+
 </mapper>

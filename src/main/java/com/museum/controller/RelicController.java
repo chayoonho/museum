@@ -9,6 +9,6 @@ import com.museum.service.RelicService;
 public class RelicController {
 	
 	@Autowired
-	RelicService rs;
+	RelicService relicSvc;
 	
 }

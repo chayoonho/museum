@@ -11,5 +11,8 @@ import com.museum.dto.Paging;
 public interface INoticeDao {
 
 	ArrayList<NoticeDto> listNotice(Paging paging, String key);
+	NoticeDto getNotice(int num);
+	void plusReadCount(int num);
+
 
 }

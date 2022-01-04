@@ -1,3 +1,11 @@
+/*
+ * 변경 사항
+ * 
+ * booking 테이블에 bookingnum(예약자 수) 컬럼 추가
+ * interest 테이블 추가
+ * program 테이블에 maxbookingnum(최대 예약자 수) 컬럼 추가
+ * voc 테이블에 reply_writedate(답변 작성일) 컬럼 추가
+ * */
 
 /* Drop Tables */
 
@@ -12,6 +20,24 @@ DROP TABLE member_mus CASCADE CONSTRAINTS;
 DROP TABLE program CASCADE CONSTRAINTS;
 
 
+/* 시퀀스 삭제 */
+DROP SEQUENCE notice_seq;
+DROP SEQUENCE voc_seq;
+DROP SEQUENCE booking_seq;
+DROP SEQUENCE exhibition_seq;
+DROP SEQUENCE program_seq;
+DROP SEQUENCE share_ticket_seq;
+DROP SEQUENCE reply_ticket_seq;
+
+
+/* 시퀀스 생성 */
+CREATE SEQUENCE notice_seq START WITH 1;
+CREATE SEQUENCE voc_seq START WITH 1;
+CREATE SEQUENCE booking_seq START WITH 1;
+CREATE SEQUENCE exhibition_seq START WITH 1;
+CREATE SEQUENCE program_seq START WITH 1;
+CREATE SEQUENCE share_ticket_seq START WITH 1;
+CREATE SEQUENCE reply_ticket_seq START WITH 1;
 
 
 /* Create Tables */
@@ -249,69 +275,32 @@ ALTER TABLE reply_ticket
 ;
 
 
+------------------------------------------------------------------------
 
-/* Comments */
-
-COMMENT ON COLUMN booking.num IS '예약 번호';
-COMMENT ON COLUMN booking.member_id IS '회원 아이디';
-COMMENT ON COLUMN booking.program_num IS '프로그램 번호';
-COMMENT ON COLUMN booking.name IS '이름';
-COMMENT ON COLUMN booking.phone IS '전화번호';
-COMMENT ON COLUMN booking.email IS '이메일';
-COMMENT ON COLUMN booking.bookingnum IS '예약자 수';
-COMMENT ON COLUMN booking.personal_info_yn IS '개인정보수집 동의 여부(0: 미동의, 1: 동의)';
-COMMENT ON COLUMN exhibition.title IS '전시명';
-COMMENT ON COLUMN exhibition.place IS '전시장소';
-COMMENT ON COLUMN exhibition.startdate IS '전시시작일';
-COMMENT ON COLUMN exhibition.enddate IS '전시종료일';
-COMMENT ON COLUMN exhibition.img IS '이미지';
-COMMENT ON COLUMN exhibition.detail_content IS '상세 내용';
-COMMENT ON COLUMN interest.num IS '번호';
-COMMENT ON COLUMN interest.member_id IS '회원 아이디';
-COMMENT ON COLUMN interest.program_num IS '프로그램 번호';
-COMMENT ON COLUMN interest.writedate IS '등록일';
-COMMENT ON COLUMN member_mus.id IS '아이디';
-COMMENT ON COLUMN member_mus.pwd IS '비밀번호';
-COMMENT ON COLUMN member_mus.name IS '이름';
-COMMENT ON COLUMN member_mus.email IS '이메일';
-COMMENT ON COLUMN member_mus.phone IS '전화번호';
-COMMENT ON COLUMN member_mus.admin_yn IS '관리자 여부(0: 회원, 1: 관리자)';
-COMMENT ON COLUMN notice.num IS '번호';
-COMMENT ON COLUMN notice.member_id IS '작성자';
-COMMENT ON COLUMN notice.content IS '내용';
-COMMENT ON COLUMN notice.writedate IS '작성일';
-COMMENT ON COLUMN notice.readcount IS '조회수';
-COMMENT ON COLUMN program.num IS '번호';
-COMMENT ON COLUMN program.title IS '제목';
-COMMENT ON COLUMN program.content IS '내용';
-COMMENT ON COLUMN program.startdate IS '시작일';
-COMMENT ON COLUMN program.enddate IS '종료일';
-COMMENT ON COLUMN program.place IS '장소';
-COMMENT ON COLUMN program.target IS '대상';
-COMMENT ON COLUMN program.maxbookingnum IS '최대 예약자 수';
-COMMENT ON COLUMN program.entry_fee IS '참가비';
-COMMENT ON COLUMN program.status IS '접수현황';
-COMMENT ON COLUMN program.img IS '이미지';
-COMMENT ON COLUMN program.detail_content IS '상세내용';
-COMMENT ON COLUMN reply_ticket.num IS '댓글 번호';
-COMMENT ON COLUMN reply_ticket.ticket_num IS '티켓나눔터 게시물 번호';
-COMMENT ON COLUMN reply_ticket.member_id IS '회원 아이디';
-COMMENT ON COLUMN reply_ticket.writedate IS '작성일';
-COMMENT ON COLUMN reply_ticket.content IS '내용';
-COMMENT ON COLUMN share_ticket.num IS '번호';
-COMMENT ON COLUMN share_ticket.member_id IS '회원 아이디';
-COMMENT ON COLUMN share_ticket.title IS '제목';
-COMMENT ON COLUMN share_ticket.content IS '내용';
-COMMENT ON COLUMN share_ticket.writedate IS '작성일';
-COMMENT ON COLUMN share_ticket.share_yn IS '나눔 처리 여부(0: 미처리, 1: 처리)';
-COMMENT ON COLUMN voc.num IS '번호';
-COMMENT ON COLUMN voc.member_id IS '작성자';
-COMMENT ON COLUMN voc.title IS '제목';
-COMMENT ON COLUMN voc.content IS '내용';
-COMMENT ON COLUMN voc.writedate IS '작성일';
-COMMENT ON COLUMN voc.reply IS '답변';
-COMMENT ON COLUMN voc.reply_writedate IS '답변 작성일';
-COMMENT ON COLUMN voc.reply_yn IS '답변 유무(0: 미답변, 1: 답변)';
+-- 데이터베이스 모든 테이블 조회
+SELECT * FROM tab;
 
 
 
+-- DATA 추가
+------------------------------------------------------------------------
+-- 멤버
+INSERT INTO member_mus VALUES('admin', 'admin', '관리자', 'admin@naver.com', '010-0000-0000', '1');
+INSERT INTO member_mus VALUES('oneone', '1111', '김일일', 'oneone@naver.com', '010-1111-1111', '0');
+INSERT INTO member_mus VALUES('kim', '1234', '김일이', 'kim@naver.com', '010-1212-1212', '0');
+INSERT INTO member_mus VALUES('park', '1234', '박삼사', 'park@naver.com', '010-3434-3434', '0');
+INSERT INTO member_mus VALUES('lee', '1234', '이오육', 'lee@naver.com', '010-5656-5656', '0');
+INSERT INTO member_mus VALUES('hong', '1234', '홍칠팔', 'hong@naver.com', '010-7878-7878', '0');
+------------------------------------------------------------------------
+
+
+
+-- 해당 테이블 데이터 조회
+SELECT * FROM member_mus;
+SELECT * FROM booking;
+SELECT * FROM exhibition;
+SELECT * FROM program;
+SELECT * FROM notice;
+SELECT * FROM voc;
+SELECT * FROM share_ticket;
+SELECT * FROM reply_ticket;

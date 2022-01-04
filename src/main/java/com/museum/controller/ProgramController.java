@@ -16,17 +16,18 @@ import com.museum.service.ProgramService;
 public class ProgramController {
 
 	@Autowired
-	ProgramService ps;
+	ProgramService programSvc;
 
 	@RequestMapping("programList")
 	public ModelAndView programList(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
 
-		
-		  if (request.getParameter("first") != null) { session.removeAttribute("page");
-		  session.removeAttribute("key"); }
-		 
+		if (request.getParameter("first") != null) {
+			session.removeAttribute("page");
+			session.removeAttribute("key");
+		}
+
 		int page = 1;
 		if (request.getParameter("page") != null) {
 			page = Integer.parseInt(request.getParameter("page"));
@@ -52,12 +53,12 @@ public class ProgramController {
 		Paging paging = new Paging();
 		paging.setPage(page);
 		paging.setDisplayRow(5);
-		
-		int count = ps.getAllCount("program", "title", key );
+
+		int count = programSvc.getAllCount("program", "title", key);
 		paging.setTotalCount(count);
 		paging.paging();
 
-		mav.addObject("programList", ps.listProgram(paging, key));
+		mav.addObject("programList", programSvc.listProgram(paging, key));
 		mav.addObject("paging", paging);
 		mav.addObject("key", key);
 		mav.setViewName("program/programList");
@@ -68,9 +69,14 @@ public class ProgramController {
 	@RequestMapping("programDetail")
 	public ModelAndView programDetail(@RequestParam("num") int num) {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("programDto", ps.getProgram(num));
+		mav.addObject("programDto", programSvc.getProgram(num));
 		mav.setViewName("program/programDetail");
 
 		return mav;
+	}
+	
+	@RequestMapping("programWriteForm")
+	public String programWriteForm() {
+		return "admin/programWrite";
 	}
 }

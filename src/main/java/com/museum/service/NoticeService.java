@@ -13,10 +13,16 @@ import com.museum.dto.Paging;
 public class NoticeService {
 	
 	@Autowired
-	INoticeDao ndao;
+	INoticeDao noticeDao;
 
 	public ArrayList<NoticeDto> listNotice(Paging paging, String key) {
-		return ndao.listNotice(paging, key);
+		return noticeDao.listNotice(paging, key);
 	}
+
+	public NoticeDto getNotice(int num) {
+		noticeDao.plusReadCount(num);
+		return noticeDao.getNotice(num);
+	}
+
 
 }

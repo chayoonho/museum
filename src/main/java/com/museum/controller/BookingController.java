@@ -7,7 +7,7 @@ import com.museum.service.BookingService;
 
 @Controller
 public class BookingController {
-
+	
 	@Autowired
-	BookingService bs;
+	BookingService bookingSvc;
 }

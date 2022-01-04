@@ -2,4 +2,15 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
 <mapper namespace="com.museum.dao.IVocDao">
+
+	<select id="listVoc" resultType="com.museum.dto.VocDto">
+		SELECT * FROM ( 
+		SELECT * FROM(
+		SELECT rownum AS rn, v.* FROM ( (SELECT * FROM voc WHERE title like '%'||#{param2}||'%'   
+		ORDER BY num DESC) v )
+		) WHERE rn &gt;= #{param1.startNum} 
+		) WHERE rn &lt;= #{param1.endNum} 
+	</select>
+	
+	
 </mapper>

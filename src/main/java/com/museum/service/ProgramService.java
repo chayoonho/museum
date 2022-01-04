@@ -13,17 +13,22 @@ import com.museum.dto.ProgramDto;
 public class ProgramService {
 	
 	@Autowired
-	IProgramDao pdao;
+	IProgramDao programDao;
 
 	public ArrayList<ProgramDto> listProgram(Paging paging, String key) {
-		return pdao.listProgram(paging, key);
+		return programDao.listProgram(paging, key);
 	}
 
 	public ProgramDto getProgram(int num) {
-		return pdao.getProgram(num);
+		return programDao.getProgram(num);
 	}
 
 	public int getAllCount(String tableName, String fieldName, String key) {
-		return pdao.getAllCount(tableName, fieldName, key);
+		return programDao.getAllCount(tableName, fieldName, key);
 	}
+
+	public String getProgram() {
+		return null;
+	}
+
 }

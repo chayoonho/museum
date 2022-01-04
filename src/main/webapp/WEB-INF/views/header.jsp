@@ -10,8 +10,8 @@
 	
 	<link href="/css/museum.css" rel="stylesheet">
 	<link href="/css/table_btn.css" rel="stylesheet">
-	
-	<script src="script/member.js"></script>
+
+	<script src="/script/member.js"></script>
 	
 	
 	<script src="admin/script/admin_booking.js"></script>
@@ -48,7 +48,7 @@
 
 			<!-- 메인로고 -->
 			<div id="logo">
-				<a href="main"> 
+				<a href="/"> 
 					<img src="/img/logo.png" width="200" height="40" />
 				</a>
 			</div>
