@@ -1,4 +1,4 @@
-package com.museum.dto;
+package com.museum.util;
 
 import lombok.Data;
 
