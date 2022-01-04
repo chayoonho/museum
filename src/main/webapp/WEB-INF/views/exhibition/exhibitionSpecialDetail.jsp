@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</div>
-	<input type="button" id="btnList" value="목록" onClick="location.href ='museum.do?command=exhibitionSpecialList&kind=' + '${kind}'">
+	<input type="button" id="btnList" value="목록" onClick="location.href ='exhibitionSpecialList?kind=' + '${kind}'">
 </article>
 
 
