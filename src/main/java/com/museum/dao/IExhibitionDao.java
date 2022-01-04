@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.museum.dto.ExhibitionDto;
-import com.museum.dto.Paging;
+import com.museum.util.Paging;
 
 @Mapper
 public interface IExhibitionDao {

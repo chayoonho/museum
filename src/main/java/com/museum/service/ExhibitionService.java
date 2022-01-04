@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.museum.dao.IExhibitionDao;
 import com.museum.dto.ExhibitionDto;
-import com.museum.dto.Paging;
+import com.museum.util.Paging;
 
 @Service
 public class ExhibitionService {
