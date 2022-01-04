@@ -5,10 +5,10 @@
 
 <article>
 	<h1 class="menu_title">프로그램 정보</h1>
-	<form method="post" name="frm">
+	<form name="frm">
 		<div class="content_detail">
 			<div class="content_img">
-				<img src="img/${programDto.img}"  style="width: 90%;" onerror="this.src='img/img_noImage.jpg'">
+				<img src="/img/${programDto.img}"  style="width: 90%;" onerror="this.src='/img/img_noImage.jpg'">
 			</div>
 			<hr style="border: 1px solid black;">
 			<div class="content_view">
@@ -58,7 +58,7 @@
 			<c:if test='${loginUser.admin_yn=="0"}'>
 				<input type="button" value="예약하기" class="btn" onclick="go_booking(${programDto.num});">
 			</c:if>
-			<input type="reset" value="목록" class="btn" onclick="location.href='museum.do?command=programList'">
+			<input type="button" value="목록" class="btn" onclick="location.href='programList'">
 		</div>
 	</form>
 </article>

@@ -1,0 +1,15 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.museum.dao.INoticeDao">
+
+	<select id="listNotice" resultType="com.museum.dto.NoticeDto">
+		SELECT * FROM ( 
+		SELECT * FROM(
+		SELECT rownum AS rn, n.* FROM ( (SELECT * FROM notice WHERE title like '%'||#{param2}||'%'   
+		ORDER BY num DESC) n )
+		) WHERE rn &gt;= #{param1.startNum} 
+		) WHERE rn &lt;= #{param1.endNum} 
+	</select>
+
+</mapper>

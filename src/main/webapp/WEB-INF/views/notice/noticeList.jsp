@@ -18,7 +18,7 @@
 				<c:forEach items="${noticeList}" var="noticeDto">
 					<tr>
 						<td>${noticeDto.num}</td>
-						<td style="text-align: left;"><a href="museum.do?command=noticeDetail&num=${noticeDto.num}">${noticeDto.title}</a></td>
+						<td style="text-align: left;"><a href="noticeDetail?num=${noticeDto.num}">${noticeDto.title}</a></td>
 						<td>${noticeDto.member_id}</td>
 						<td><fmt:formatDate value="${noticeDto.writedate}" type="date" /></td>
 						<td>${noticeDto.readcount}</td>
@@ -28,13 +28,13 @@
 		</table>
 	</form>
 	<!--페이징-->
-	<jsp:include page="/paging/paging.jsp">
+	<jsp:include page="../include/paging/paging.jsp">
 		<jsp:param name="page" value="${paging.page}" />
 		<jsp:param name="beginPage" value="${paging.beginPage}" />
 		<jsp:param name="endPage" value="${paging.endPage}" />
 		<jsp:param name="prev" value="${paging.prev}" />
 		<jsp:param name="next" value="${paging.next}" />
-		<jsp:param name="command" value="museum.do?command=noticeList" />
+		<jsp:param name="command" value="programList" />
 	</jsp:include>
 </article>
 

@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 
-<link rel="stylesheet" type="text/css" href="css/program.css">
+<link rel="stylesheet" type="text/css" href="/css/program.css">
 
 <article>
 	<h2 class="subTitle">프로그램 안내</h2>
-	<form name="frm" method="post">
+	<form name="frm">
 		<table class="table_program">
 			<c:forEach items="${programList}" var="programDto">
 				<tr>
 					<td rowspan="6" style="width: 330px">
-						<a href="museum.do?command=programDetail&num=${programDto.num}">
-							<img src="img/${programDto.img}" width="300px;" height="200px;" onerror="this.src='img/img_noImage.jpg'">
+						<a href="programDetail?num=${programDto.num}">
+							<img src="/img/${programDto.img}" width="300px;" height="200px;" onerror="this.src='img/img_noImage.jpg'">
 						</a>
 					</td>
 				</tr>
 				<tr>
 					<td class="table_title">
-						<a href="museum.do?command=programDetail&num=${programDto.num}">${programDto.title}</a>
+						<a href="programDetail?num=${programDto.num}">${programDto.title}</a>
 					</td>
 					<td rowspan="6" style="width: 10%; text-align: center; font-weight: bold">
 						<c:choose>	
@@ -58,13 +58,13 @@
 	<br>
 	<br>
 	<!--페이징-->
-	<jsp:include page="/paging/paging.jsp">
+	<jsp:include page="../include/paging/paging.jsp">
 		<jsp:param name="page" value="${paging.page}" />
 		<jsp:param name="beginPage" value="${paging.beginPage}" />
 		<jsp:param name="endPage" value="${paging.endPage}" />
 		<jsp:param name="prev" value="${paging.prev}" />
 		<jsp:param name="next" value="${paging.next}" />
-		<jsp:param name="command" value="museum.do?command=programList" />
+		<jsp:param name="command" value="programList" />
 	</jsp:include>
 </article>
 

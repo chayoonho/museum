@@ -12,6 +12,11 @@ public class ExhibitionController {
 	@Autowired
 	ExhibitionService es;
 	
+	@RequestMapping("exhibitionPermanent")
+	public String exhibitionPermanent() {
+		return "exhibition/exhibitionPermanent";
+	}
+	
 
 
 }
