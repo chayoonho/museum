@@ -2,10 +2,8 @@
 function search_relic()
 {
 	var searchName = $('.input_search').val();
-	alert('searchName::' + searchName);
 	
 	var category = document.getElementById('category').value;
-	alert('category::' + category);
 	
 	if(category == "2")
 	{
