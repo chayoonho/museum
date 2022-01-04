@@ -14,10 +14,6 @@
 	<link href="/css/table_btn.css" rel="stylesheet">
 	
 	<script src="script/member.js"></script>
-	
-	
-	<script src="admin/script/admin_booking.js"></script>
-	
 </head>
 <body>
 	<div id="wrap">
