@@ -1,10 +1,17 @@
 package com.museum.dao;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.annotations.Mapper;
+
+import com.museum.dto.ExhibitionDto;
+import com.museum.util.Paging;
 
 @Mapper
 public interface IExhibitionDao {
 
-	String getExhibition();
+	public int getAllCount(String kind);
+	ArrayList<ExhibitionDto> getExhbnSpList(Paging paging, String kind);
+	ExhibitionDto getExhbnSp(int num);
 
 }

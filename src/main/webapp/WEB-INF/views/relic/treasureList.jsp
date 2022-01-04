@@ -2,7 +2,7 @@
 <%@ include file="../header.jsp"%>
 <link rel="stylesheet" type="text/css" href="css/relic.css">
 
-<script src="js/relic.js"></script>
+<script src="script/relic.js"></script>
 
 <article>
 	<h2 class="subTitle">보물 검색</h2>
@@ -24,11 +24,11 @@
 			<ul id="card1">
 				<c:forEach items="${relicList}" var="relicDto">
 					<li class="card">
-						<a href="museum.do?command=treasureDetail&id=${relicDto.id}">
+						<a href="treasureDetail?id=${relicDto.id}">
 							<img src="${relicDto.imgThumUriL}" alt="${relicDto.nameKr} 대표이미지">
 						</a>
 						<div class="txt">
-							<a href="museum.do?command=treasureDetail&id=${relicDto.id}">${relicDto.nameKr}</a>
+							<a href="treasureDetail?id=${relicDto.id}">${relicDto.nameKr}</a>
 						</div>
 					</li>
 				</c:forEach>
@@ -39,13 +39,13 @@
 	<br>
 </article>
 <!--페이징-->
-<jsp:include page="/paging/paging.jsp">
+<jsp:include page="../paging/paging.jsp">
 	<jsp:param name="page" value="${paging.page}" />
 	<jsp:param name="beginPage" value="${paging.beginPage}" />
 	<jsp:param name="endPage" value="${paging.endPage}" />
 	<jsp:param name="prev" value="${paging.prev}" />
 	<jsp:param name="next" value="${paging.next}" />
-	<jsp:param name="command" value="museum.do?command=treasureList" />
+	<jsp:param name="command" value="treasureList" />
 </jsp:include>
 
 <%@ include file="../footer.jsp"%>
