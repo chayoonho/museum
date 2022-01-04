@@ -25,7 +25,7 @@ function go_next_signup()
 	if( (document.agreementFrm.okon1[0].checked == true )
 		&& (document.agreementFrm.okon2[0].checked == true))
 	{			
-		document.agreementFrm.action ="museum.do?command=signupForm";
+		document.agreementFrm.action ="signupForm";
 		document.agreementFrm.submit();		
 	}
 	else
@@ -45,7 +45,7 @@ function idcheck()
 		return;
 	}
 	
-	var url = "museum.do?command=idCheck&id="+document.signupForm.id.value;
+	var url = "idCheck?id="+document.signupForm.id.value;
 	var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250";
 	
 	window.open(url, "idCheck", opt);
@@ -107,14 +107,14 @@ function go_save_signup()
 	{
 		alert('[' + document.signupForm.id.value + '] 님이 가입되었습니다.');
 		
-		document.signupForm.action = "museum.do?command=signup";
+		document.signupForm.action = "signup";
 		document.signupForm.submit();
 	}
 	else
 	{
 		alert('관리자 계정 [' +document.signupForm.id.value+ ']이 생성되었습니다');
 		
-		document.signupForm.action="museum.do?command=signup";
+		document.signupForm.action="signup";
 		document.signupForm.submit();
 	}
 }
@@ -149,7 +149,7 @@ function go_update_member()
 	{
 		alert(' 회원정보 수정이 완료되었습니다 ');
 		
-	    document.signupForm.action = "museum.do?command=memberEdit";
+	    document.signupForm.action = "memberEdit";
 	    document.signupForm.submit();
 	}
 }
@@ -167,7 +167,7 @@ function go_delete_member()
 	{
 		alert("회원탈퇴가 완료되었습니다");
 		
-		document.signupForm.action = "museum.do?command=memberDelete";
+		document.signupForm.action = "memberDelete";
 		document.signupForm.submit();
 	}
 	else
@@ -180,7 +180,7 @@ function go_delete_member()
 
 function find_id()
 {
-	var url = "museum.do?command=findIdPwd";
+	var url = "findIdPwd";
 	var opt = "toolbar=no,menubar=no,scrollbars=no,resizable=no,width=700,";
 	opt = opt + "height=500, top=300, left=300";
 	window.open(url, "Find Id/Pw", opt);

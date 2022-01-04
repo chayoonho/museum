@@ -7,12 +7,18 @@
 <title>idCheck</title>
 <link href="css/museum.css" rel="stylesheet"> 
 <script src="js/member.js"></script>
+<script type="text/javascript">
+	function idok(){
+		opener.signupForm.id.value="${id}";
+		opener.signupForm.reid.value="${id}";
+		self.close();
+	}
+</script>
 </head>
 <body>
 <div id="wrap" style="margin:20px 0">
 <h1>ID 중복확인</h1>
-	<form method="post" name="idCheckFrm" action="museum.do">
-		<input type="hidden" name="command" value="idCheck">
+	<form method="post" name="idCheckFrm" action="idCheck">
 		아이디 <input type=text name="id" value="${id}">
 		<input type="submit" value="검색" class="submit"><br>
 	
@@ -23,7 +29,7 @@
 			</c:if>
 			<c:if test="${result == -1}">
 				${id}는 사용 가능한 ID입니다.    
-				<input type="button" value="사용" class="cancel" onclick="idok('${id}');">
+				<input type="button" value="사용" class="cancel" onclick="idok();">
 			</c:if>
 		</div>
 	</form>
