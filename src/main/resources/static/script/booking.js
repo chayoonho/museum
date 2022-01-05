@@ -1,6 +1,6 @@
 function go_booking(num)
 {
-	document.frm.action ="museum.do?command=bookingForm&num="+num;
+	document.frm.action ="bookingForm?num="+num;
 	document.frm.submit();
 }
 

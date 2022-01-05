@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +13,14 @@
 	<link href="/css/museum.css" rel="stylesheet">
 	<link href="/css/table_btn.css" rel="stylesheet">
 
+
 	<script src="/script/member.js"></script>
+	
 	
 	
 	<script src="admin/script/admin_booking.js"></script>
 	
+
 </head>
 <body>
 	<div id="wrap">

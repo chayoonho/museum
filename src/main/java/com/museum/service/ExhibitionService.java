@@ -15,8 +15,9 @@ public class ExhibitionService {
 	@Autowired
 	IExhibitionDao exhbnDao;
 
-	public String getExhibition() {
-		return exhbnDao.getExhibition();
+	/*
+	 * public String getExhibition() { return exhbnDao.getExhibition();
+	 */
 
 	public int getAllCount(String kind) 
 	{

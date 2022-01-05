@@ -2,7 +2,6 @@
 <%@ include file="../header.jsp"%>
 <link rel="stylesheet" type="text/css" href="css/exhibition.css">
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script/exhibition.js"></script>
 
 <article>

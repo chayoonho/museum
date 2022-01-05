@@ -2,10 +2,11 @@
 <%@ include file="../header.jsp"%>
 
 <link rel="stylesheet" type="text/css" href="css/program.css">
-
+<script src="/script/booking.js"></script>
 <article>
 	<h1 class="menu_title">프로그램 정보</h1>
 	<form name="frm">
+	<input type="hidden" value="num" name="num">
 		<div class="content_detail">
 			<div class="content_img">
 				<img src="img/${programDto.img}"  style="width: 90%;" onerror="this.src='/img/img_noImage.jpg'">

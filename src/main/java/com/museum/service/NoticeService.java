@@ -23,6 +23,7 @@ public class NoticeService {
 		noticeDao.plusReadCount(num);
 		return noticeDao.getNotice(num);
 	}
+	
 
 
 }
