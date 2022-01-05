@@ -2,6 +2,7 @@ function go_booking(num)
 {
 	document.frm.action ="bookingForm?num="+num;
 	document.frm.submit();
+	
 }
 
 /*신규*/
@@ -29,7 +30,7 @@ function go_booking_save_program()
 	{	
 		if(confirm("예약이 완료되었습니다."))
 		{
-			document.frmbooking.action = "museum.do?command=booking";
+			document.frmbooking.action = "booking";
 			document.frmbooking.submit();
 		}
 	}
@@ -42,7 +43,7 @@ function go_cancel_booking(num)
 	{
 		alert('예약이 취소되었습니다.');
 		
-		document.frm.action = "museum.do?command=bookingCancel&num="+num;
+		document.frm.action = "bookingCancel?num="+num;
 		document.frm.submit();
 	}
 }
@@ -50,7 +51,7 @@ function go_cancel_booking(num)
 /*변경*/
 function go_update_booking(num)
 {
-	var url = "museum.do?command=bookingUpdateForm&num=" + num;
+	var url = "bookingUpdateForm?num=" + num;
 	location.href = url;
 }
 
@@ -80,7 +81,7 @@ function go_update_save_booking()
 		{
 			alert('예약이 변경되었습니다.');
 		
-			document.frmbooking.action = "museum.do?command=bookingUpdate";
+			document.frmbooking.action = "bookingUpdate";
 			document.frmbooking.submit();
 		}
 	}

@@ -1,7 +1,5 @@
 package com.museum.controller;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ezen.spg16.dto.BoardVO;
-import com.ezen.spg16.dto.ReplyVO;
 import com.museum.dto.Paging;
 import com.museum.service.NoticeService;
 import com.museum.service.ProgramService;

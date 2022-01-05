@@ -2,4 +2,30 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
 <mapper namespace="com.museum.dao.IBookingDao">
+
+	<insert id="insertBooking" parameterType="com.museum.dto.BookingDto">
+		INSERT INTO booking(num, member_id, program_num, name, phone, email, personal_info_yn)
+		VALUES(booking_seq.nextVal, #{member_id}, #{program_num}, #{name}, #{phone}, #{email}, #{personal_info_yn})
+	</insert>
+	
+	<select id="selectBookingAll" resultType="com.museum.dto.BookingDto">
+		SELECT * FROM booking WHERE member_id=#{param1} ORDER BY num DESC
+	</select>
+		
+	<select id="getAllCount" resultType="_int">
+		SELECT COUNT(*) FROM booking
+	</select>
+	
+	<select id="getBooking" resultType="com.museum.dto.BookingDto">
+		SELECT * FROM booking WHERE num=#{param1}
+	</select>
+	
+	<update id="updateBooking" parameterType="com.museum.dto.BookingDto">
+		UPDATE booking SET name=#{name}, phone=#{phone}, email=#{email}
+		WHERE num=#{num}
+	</update>
+	
+	<delete id="cancelBooking">
+		DELETE FROM booking WHERE num=#{param1}
+	</delete>
 </mapper>

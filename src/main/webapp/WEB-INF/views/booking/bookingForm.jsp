@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
-
+<script src="/script/booking.js"></script>
 <article>
 	<h2 class="menu_title">프로그램 예약</h2>
 	<br>
 	<h3>프로그램 정보</h3>
-	<form name="frmbooking" method="post"> 
+	<form name="frmbooking" method="post" action="booking"> 
 		<input type="hidden" name="program_num" value="${programDto.num}">
 		
 		<table class="table_view">
@@ -33,7 +33,7 @@
 			</tr>
 			<tr>
 				<th>상세설명</th>
-				<td colspan="5">${programDto.detail_content}</td>
+				<td colspan="5"><pre>${programDto.detail_content}</pre></td>
 			</tr>
 			<tr>
 		</table>
@@ -47,7 +47,7 @@
 					<input type="hidden" name="member_id" value="${loginUser.id}">
 				</td>
 				<th>신청자 이름</th>
-				<td><input type="text" name="name" value="${bookingDto.name}"></td>
+				<td><input type="text" name="name" value="${bookingDto.name}" ></td>
 			</tr>
 			<tr>
 				<th>전화번호 <span style="color: red; font-weight: bold;">*</span></th>
@@ -63,8 +63,7 @@
 				</td>
 			</tr>
 		</table>
-		
-		<input class="btn" type="button" value="예약하기" onClick="go_booking_save_program()"> 
+		<input class="btn" type="button" value="예약하기" onclick="go_booking_save_program()"> 
 		<input class="btn" type="reset" value="초기화" >
 		<input class="btn" type="button" value="돌아가기" onClick="go_mov_program()">
 	</form>

@@ -5,22 +5,22 @@
 <nav id="admin_subMenu">
 	<ul>
 		<li>
-			<a href="museum.do?command=adminMemberList">회원 관리</a>
+			<a href="adminMemberList">회원 관리</a>
 		</li>
 		<li>
-			<a href="museum.do?command=adminExhibitionList">전시 관리</a>
+			<a href="adminExhibitionList">전시 관리</a>
 		</li>
 		<li>
-			<a href="museum.do?command=adminProgramList">프로그램 관리</a>
+			<a href="adminProgramList">프로그램 관리</a>
 		</li>
 		<li>
-			<a href="museum.do?command=adminNoticeList">공지사항 관리</a>
+			<a href="adminNoticeList">공지사항 관리</a>
 		</li>
 		<li>
-			<a href="museum.do?command=adminVocList">고객의 소리 관리</a>
+			<a href="adminVocList">고객의 소리 관리</a>
 		</li>
 		<li>
-			<a href="museum.do?command=adminShareTicketList">티켓 나눔터 관리</a>
+			<a href="adminShareTicketList">티켓 나눔터 관리</a>
 		</li>
 	</ul>
 </nav>

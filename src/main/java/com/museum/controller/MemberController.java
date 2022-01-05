@@ -134,6 +134,15 @@ public class MemberController {
 		return mav;
 	}
 	
+	@RequestMapping("adminPageForm")
+	public ModelAndView adminPageForm(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		mav.setViewName("admin/adminPageform");
+		
+		return mav;
+	}
+	
 	
 	@RequestMapping("/memberInfo")
 	public ModelAndView memberInfo(HttpServletRequest request) {

@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/mypage.css">
 <%@ include file="mypage_subMenu.jsp" %>
-
+<script src="/script/booking.js"></script>
 <article>
 	<h2>나의 예약</h2>
 	<form name="frm" method="post">
@@ -19,12 +19,12 @@
 			<c:forEach items="${bookingList}" var="bookingDto">
 				<tr>
 					<td>
-						<a href="museum.do?command=bookingDetail&num=${bookingDto.num}">${bookingDto.num}
+						<a href="bookingDetail?num=${bookingDto.num}">${bookingDto.num}
 							<input type="hidden" name="program_num" value="${bookingDto.program_num}">
 						</a>
 					</td>
 					<td>
-						<a href="museum.do?command=programDetail&num=${bookingDto.program_num}">${bookingDto.program_num}</a>
+						<a href="programDetail?num=${bookingDto.program_num}">${bookingDto.program_num}</a>
 					</td>	
 					<td>${bookingDto.name}</td>
 					<td>${bookingDto.phone}</td>
@@ -39,15 +39,15 @@
 	</form>
 	<br>
 	<br>
-	<!--페이징-->
-	<jsp:include page="/paging/paging.jsp">
+<%-- 	<!--페이징-->
+	<jsp:include page="../include/paging/paging.jsp">
 		<jsp:param name="page" value="${paging.page}" />
 		<jsp:param name="beginPage" value="${paging.beginPage}" />
 		<jsp:param name="endPage" value="${paging.endPage}" />
 		<jsp:param name="prev" value="${paging.prev}" />
 		<jsp:param name="next" value="${paging.next}" />
-		<jsp:param name="command" value="museum.do?command=bookingList" />
-	</jsp:include>
+		<jsp:param name="command" value="bookingList" />
+	</jsp:include> --%>
 </article>
 
 <%@ include file="../footer.jsp"%>

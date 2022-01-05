@@ -3,13 +3,13 @@
 
 <link rel="stylesheet" type="text/css" href="css/mypage.css">
 <%@ include file="../mypage/mypage_subMenu.jsp" %>
-
+<script src="/script/booking.js"></script>
 
 <article>
 	<h2 class="menu_title">프로그램 예약 수정</h2>
 	<br>
 	<h3>프로그램 정보</h3>
-	<form name="frmbooking" method="post" enctype="multipart/form-data">
+	<form name="frmbooking" method="post" >
 		<table class="table_view">
 			<tr>
 				<th>프로그램 번호</th>

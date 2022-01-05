@@ -6,7 +6,6 @@
 <article>
 	<h1 class="menu_title">프로그램 정보</h1>
 	<form name="frm">
-	<input type="hidden" value="num" name="num">
 		<div class="content_detail">
 			<div class="content_img">
 				<img src="img/${programDto.img}"  style="width: 90%;" onerror="this.src='/img/img_noImage.jpg'">
@@ -57,7 +56,7 @@
 		<div class="clear"></div>
 		<div class="box_btn">
 			<c:if test='${loginUser.admin_yn=="0"}'>
-				<input type="button" value="예약하기" class="btn" onclick="go_booking(${programDto.num});">
+				<input type="button" value="예약하기" class="btn" onclick="location.href='bookingForm?num=${programDto.num}'">
 			</c:if>
 			<input type="button" value="목록" class="btn" onclick="location.href='programList'">
 		</div>

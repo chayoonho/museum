@@ -3,6 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/mypage.css">
 <%@ include file="../mypage/mypage_subMenu.jsp" %>
+<script src="/script/booking.js"></script>	
 
 <article>
 	<h2 class="menu_title">프로그램 예약 변경 확인</h2>
@@ -16,7 +17,7 @@
 		<table class="table_view">
 			<tr>
 				<th>프로그램 번호</th>
-				<td><a href="museum.do?command=programDetail&num=${bookingDto.program_num}">
+				<td><a href="programDetail&num=${bookingDto.program_num}">
 				${bookingDto.program_num}</a></td>
 			</tr>
 			<tr>
@@ -35,10 +36,10 @@
 		
 		<c:choose>
 			<c:when test="${loginUser.admin_yn=='0'}">
-				<input class="btn" type="button" value="돌아가기" onClick="location.href='museum.do?command=bookingList'">
+				<input class="btn" type="button" value="돌아가기" onClick="location.href='bookingList'">
 			</c:when>
 			<c:when test="${loginUser.admin_yn=='1'}">
-				<input class="btn" type="button" value="돌아가기" onClick="location.href='museum.do?command=adminBookingList'">
+				<input class="btn" type="button" value="돌아가기" onClick="location.href='adminBookingList'">
 			</c:when>
 		</c:choose>
 	</form>

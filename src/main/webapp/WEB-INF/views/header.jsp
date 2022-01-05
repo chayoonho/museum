@@ -14,9 +14,7 @@
 	<link href="/css/table_btn.css" rel="stylesheet">
 
 
-	<script src="/script/member.js"></script>
-	
-	
+	<script src="/script/member.js"></script>	
 	
 	<script src="admin/script/admin_booking.js"></script>
 	
@@ -43,7 +41,7 @@
 							</li>
 							<li>
 								<c:if test='${loginUser.admin_yn=="1"}'>
-									<a href="adminPageForm?id=">관리자페이지</a>
+									<a href="adminPageForm">관리자페이지</a>
 								</c:if>
 							</li>
 						</c:otherwise>
