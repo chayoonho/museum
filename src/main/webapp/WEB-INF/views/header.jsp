@@ -9,11 +9,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>박물관</title>
-	
+	<link href="/css/exhibition.css" rel="stylesheet">
+	<link href="/css/intro.css" rel="stylesheet">
 	<link href="/css/museum.css" rel="stylesheet">
+	<link href="/css/mypage.css" rel="stylesheet">
+	<link href="/css/program.css" rel="stylesheet">
+	<link href="/css/relic.css" rel="stylesheet">
 	<link href="/css/table_btn.css" rel="stylesheet">
 	
+	<script src="script/booking.js"></script>
+	<script src="script/exhibition.js"></script>
+	<script src="script/intro.js"></script>
 	<script src="script/member.js"></script>
+	<script src="script/museum.js"></script>
+	<script src="script/mypage.js"></script>
+	<script src="script/relic.js"></script>
+	<script src="script/ticket.js"></script>
+	<script src="script/voc.js"></script>
 </head>
 <body>
 	<div id="wrap">

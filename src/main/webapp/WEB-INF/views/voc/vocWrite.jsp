@@ -3,11 +3,10 @@
 
 <article>
 	<c:if test="${empty loginUser}">
-		<jsp:forward page='museum.do?command=loginForm&prev=vocWrite'/>
+		<jsp:forward page='vocWrite'/>
 	</c:if>
 	<h2>고객의 소리 글 등록</h2>
-	<form name="vocWrite" method="post" action="museum.do?" >
-		<input type="hidden" name="command" value="vocWrite">
+	<form name="vocWrite" method="post" action="vocWrite" >
 		<table class="table_form">
 			<tr>
 				<th>작성자</th>
@@ -23,9 +22,10 @@
 				<th>내용</th>
 				<td><textarea cols="70" rows="15" name="content"></textarea></td>
 			</tr>
+			
 		</table>
 		<input type="submit" class="btn" value="등록" onclick="return go_save_voc()"> 
-		<input type="button" class="btn" value="취소" onclick="location.href='museum.do?command=vocList'">
+		<input type="button" class="btn" value="취소" onclick="location.href='vocList'">
 	</form>	
 </article>
 <%@ include file="../footer.jsp"%>

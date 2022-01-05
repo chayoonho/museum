@@ -167,7 +167,7 @@ function go_delete_member()
 	{
 		alert("회원탈퇴가 완료되었습니다");
 		
-		document.signupForm.action = "memberDelete";
+		document.signupForm.action = "deleteMember";
 		document.signupForm.submit();
 	}
 	else

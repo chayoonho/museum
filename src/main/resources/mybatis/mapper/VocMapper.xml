@@ -2,4 +2,17 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
 <mapper namespace="com.museum.dao.IVocDao">
+
+
+	<select id="listVoc" resultType="com.museum.dto.VocDto">
+		select * from voc where member_id=#{param2} order by num desc
+	</select>
+
+	<insert id="insertVoc" parameterType="com.museum.dto.VocDto">
+		insert into voc(num, member_id, title, content, writedate, reply, reply_yn) 
+		values(#{num}, #{member_id}, #{title}, #{content}, #{writedate}, #{reply}, #{reply_yn})
+	</insert>
+
+
+
 </mapper>

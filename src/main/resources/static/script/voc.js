@@ -18,9 +18,9 @@ function go_save_voc()
 	} 
 	else 
 	{
-		alert("회원님의 소중한 의견이 등록되었습니다")
+		alert("회원님의 소중한 의견이 등록되었습니다");
 		
-		document.vocWrite.action = "museum.do?command=vocWrite";
+		document.vocWrite.action = "vocWrite";
 		document.vocWrite.submit();
 	}
 }
@@ -43,7 +43,7 @@ function go_voc_update()
 	{
 		if( confirm('수정하시겠습니까?') )
 		{
-			document.frm.action="museum.do?command=vocUpdate";
+			document.frm.action="vocUpdate";
 			document.frm.submit();
 		}
 		
@@ -56,7 +56,7 @@ function go_voc_delete(num)
 	{
 		alert("삭제되었습니다");
 		
-		document.frm.action = "museum.do?command=vocDelete&prev=vocList&num=" + num;
+		document.frm.action = "vocDelete?prev=vocList?num=" + num;
 		document.frm.submit();
 	}
 }

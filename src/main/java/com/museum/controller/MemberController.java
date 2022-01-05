@@ -33,10 +33,10 @@ public class MemberController {
 			BindingResult result, Model model, HttpServletRequest request) {
 		
 		if(result.getFieldError("id") != null) {
-			model.addAttribute("message", "아이디를 입력하세요" );
+			model.addAttribute("message", "아이디가 없습니다" );
 			return "member/login";
 		} else if( result.getFieldError("pwd") != null) {
-			model.addAttribute("message", "비밀번호를 입력하세요" );
+			model.addAttribute("message", "관리자에게 문의" );
 			return "member/login";
 		}
 		
@@ -45,17 +45,17 @@ public class MemberController {
 			model.addAttribute("message", "ID를 입력하세요");
 			return "member/login";
 		} else if( mdto.getPwd() == null) {
-			model.addAttribute("message"," 관리자 문의 필요");
+			model.addAttribute("message"," 비밀번호를 입력하세요");
 			return "member/login";
 		} else if( !mdto.getPwd().equals(memberdto.getPwd() )) {
-			model.addAttribute("message", "비밀번호를 입력하세요");
+			model.addAttribute("message", "비밀번호를 확인하세요");
 			return "member/login";
 		} else if( mdto.getPwd().equals(memberdto.getPwd() )) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", mdto);
 			return "redirect:/";
 		}else {
-			model.addAttribute("message","ERROR발생 로그인 불가");
+			model.addAttribute("message","ERROR발생. 관리자 문의");
 			return "member/login";
 		}
 	}
@@ -86,26 +86,26 @@ public class MemberController {
 		
 		model.addAttribute("reid", reid);
 		if(result.getFieldError("id") != null) {
-			model.addAttribute("message","아이디 입력은 필수사항입니다");
+			model.addAttribute("message",result.getFieldError("id").getDefaultMessage());
 			return "member/signup";
 		} else if(result.getFieldError("pwd") != null) {
-			model.addAttribute("message","비밀번호 입력은 필수사항입니다");
+			model.addAttribute("message",result.getFieldError("pwd").getDefaultMessage());
 			return "member/signup";
 		} else if(result.getFieldError("name") != null) {
-			model.addAttribute("message","성명 입력은 필수사항입니다");
+			model.addAttribute("message",result.getFieldError("name").getDefaultMessage());
 			return "member/signup";
 		} else if(result.getFieldError("email") != null) {
-			model.addAttribute("message","이메일 입력은 필수사항입니다");
+			model.addAttribute("message",result.getFieldError("email").getDefaultMessage());
 			return "member/signup";
 		} else if( reid == null || (reid != null && !reid.equals(memberdto.getId() )  )) {
-			model.addAttribute("message", "아이디 중복체크를 하지 않으셨습니다");
+			model.addAttribute("message", "아이디 불일치");
 			return "member/signup";
 		} else if( pwdCheck == null || ( pwdCheck!=null && !pwdCheck.equals(memberdto.getPwd() ))) {
-			model.addAttribute("message", "비밀번호 확인이 일치하지 않습니다");
+			model.addAttribute("message", "비밀번호 불일치");
 			return "member/signup";
 		}
 		memberSvc.insertMember(memberdto);
-		model.addAttribute("message", "회원가입이 완료되었습니다. 로그인 해주세요");
+		model.addAttribute("message", "가입이 완료되었습니다. 로그인 해주세요");
 		return "member/login";
 	}
 	
@@ -202,4 +202,24 @@ public class MemberController {
 		session.setAttribute("loginUser", memberdto);
 		return "redirect:/main";
 	}
+	
+	@RequestMapping("deleteMember")
+	public String deleteMember(@RequestParam("id") String id) {
+		
+		return "redirect:/main";
+	}
+	
+	
+	@RequestMapping("findIdPwd")
+	public String findIdPwd() {
+		return "member/findIdForm";
+	}
+	
+	
+	
+	
+	
+	
+	
+
 }
